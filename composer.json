@@ -1,0 +1,13 @@
+{
+    "name": "hexlet/code",
+    "bin": [
+	    "bin/brain-games"
+    ],
+    "authors": [
+        {
+            "name": "kantik001",
+            "email": "kantik001@yandex.ru"
+        }
+    ],
+    "require": {}
+}
