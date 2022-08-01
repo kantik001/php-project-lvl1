@@ -10,7 +10,7 @@
 	    },
 	    "files": [
 		    "src/Cli.php",
-		    "src/Games/Evengame.php"
+		    "src/Games/brain-even.php"
   
 	    ] 
     },
