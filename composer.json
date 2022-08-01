@@ -4,7 +4,12 @@
 	    "bin/brain-games"
     ],
     "autoload": {
-	    "files": [ "src/Cli.php"] 
+	    "psr-4": {
+		    "Hexlet\\Code\\":"src/"
+	    },
+	    "files": [
+		    "src/Cli.php"
+	    ] 
     },
     "authors": [
         {
