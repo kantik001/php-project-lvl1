@@ -1,6 +1,8 @@
 #!/usr/bin/env php
 <?php
 
+use function Brain\Games\EvenGame\evenData;
+
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
 if (file_exists($autoloadPath1)) {
@@ -9,52 +11,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-use function cli\line;
-use function cli\prompt;
-
-const ROUNDS_COUNT = 3;
-function evenGame(): void
-{
-	    $rounds = ROUNDS_COUNT;
-	    $message = 'Answer "yes" if the number is even, otherwise answer "no".';
-	    $gameData = generateRound($rounds);
-	    goPlay($gameData, $message);
-}
-
-function goPlay(array $gameData, string $message): void
-{
-	line("Welcome to the Brain Games!");
-	$name = prompt("May I have your name?");
-	line("Hello, %s!", $name);
-	line($message);	
-	for ($i = 1; $i <= ROUNDS_COUNT; $i++) {
-	    [$question, $answer] = $gameData[$i];
-	    line("Question: {$question}");
-	    $answerUser = prompt("Your answer");
-	    if ($answerUser === $answer) {
-	       line("Correct!");
-	    } else {
-	        line("'$answerUser' is wrong answer ;(. Correct answer was '{$answer}'.");
-	        line("Let's try again, {$name}!");
-		return;
-	    }
-	}
-	line("Congratulations, {$name}!");
-}
-
-function generateRound(int $rounds): array
-{
-	    $gameData = array();
-	    for ($i = 1; $i <= $rounds; $i++) {
-		 $gameData[$i] = generateQuestions();
-	    }
-	    return $gameData;
-}
-
-function generateQuestions(): array
-{
-	    $question = random_int(0, 100);
-	        $parityCheck = !(bool)($question % 2);
-	        $answer = $condition ? 'yes' : 'no';
-		    return [$question, $answer];
-}
+evenData();
