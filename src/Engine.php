@@ -1,21 +1,19 @@
 <?php
 
-namespace BrainGames\Engine;
-
-const MAX_ROUNDS_COUNT = 3;
+namespace Brain\Games\Engine;
 
 use function cli\prompt;
 use function cli\line;
 
-function run(callable $getGameData, string $gameTask): void
+function run($rule, $gameTask)
 {
     line('Welcome to the Brain Game!');
-    $playerName = prompt('May I have your name?', '', ' ');
+    line($rule);
+    $playerName = prompt('May I have your name?');
     line("Hello, %s!", $playerName);
-    line($gameTask);
-
-    for ($i = 0; $i < MAX_ROUNDS_COUNT; $i++) {
-        [$question, $answer] = $getGameData();
+    
+    for ($i = 0; $i < 3; $i++) {
+        [$question, $answer] = $gameTask();
         line("Question: $question");
         $playerAnswer = prompt('Your answer', '');
 

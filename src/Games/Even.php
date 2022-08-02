@@ -1,8 +1,8 @@
 <?php
 
-namespace BrainGames\Games\Even;
+namespace Brain\Games\Games\Even;
 
-use function BrainGames\Engine\run;
+use function Brain\Games\Engine\run;
 
 const GAME_TASK = 'Answer "yes" if the number is even, otherwise answer "no".';
 

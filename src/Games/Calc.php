@@ -1,8 +1,8 @@
 <?php
 
-namespace BrainGames\Games\Calc;
+namespace Brain\Games\Games\Calc;
 
-use function BrainGames\Engine\run;
+use function Brain\Games\Engine\run;
 
 const GAME_TASK = 'What is the result of the expression?';
 
