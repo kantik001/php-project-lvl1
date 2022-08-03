@@ -13,7 +13,7 @@ function runGame($gameData, $gameTask)
     line($gameTask);
     $playerName = prompt('May I have your name?');
     line("Hello, %s!", $playerName);
-    
+
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         [$question, $answer] = $gameData();
         line("Question: $question");
