@@ -30,6 +30,6 @@ function startCalcGame()
 		return [$question, $answer];
 	};
 
-	startGame($getGameData, GAME_TASK);
+	runGame($getGameData, GAME_TASK);
 }
 
