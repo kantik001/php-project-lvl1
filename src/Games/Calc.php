@@ -7,7 +7,7 @@ use function Brain\Games\Engine\runGame;
 const GAME_TASK = 'What is the result of the expression?';
 const OPERATORS = ["+", "-", "*"];
 
-function calculate($operator, $num1, $num2)
+function calculate($operator, $num1, $num2): string
 {
 	switch ($operator) {
 	case "+":
