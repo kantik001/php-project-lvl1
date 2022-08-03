@@ -2,41 +2,34 @@
 
 namespace Brain\Games\Games\Calc;
 
-use function Brain\Games\Engine\run;
+use function Brain\Games\Engine\runGame;
 
 const GAME_TASK = 'What is the result of the expression?';
+const OPERATORS = ["+", "-", "*"];
 
-function getMathOperation(): string
+function calculate($operator, $num1, $num2)
 {
-    $operations = ['+', '-', '*'];
-    return $operations[array_rand($operations)];
+	switch ($operator) {
+	case "+":
+		return $num1 + $num2;
+	case "-":
+		return $num1 - $num2;
+	case "*":
+		return $num1 * $num2;
+	}
 }
 
-function getGameData(): array
+function startCalcGame()
 {
-    $operation = getMathOperation();
-    $num1 = mt_rand(1, 10);
-    $num2 = mt_rand(1, 10);
-    $question = "$num1 $operation $num2";
+	$getGameData = function() {
+		$num1 = rand(1, 100);
+		$num2 = rand(1, 100);
+		$operator = OPERATORS[array_rand(OPERATORS, 1)];
+		$question = "{$num1} {$operator} {$num2}";
+		$answer = calculate($operator, $num1, $num2);
+		return [$question, $answer];
+	};
 
-    switch ($operation) {
-        case '+':
-            $answer = $num1 + $num2;
-            break;
-        case '-':
-            $answer = $num1 - $num2;
-            break;
-        case '*':
-            $answer = $num1 * $num2;
-            break;
-        default:
-            throw new \Exception("Wrong operation: $operation\n");
-    }
-
-    return [$question, (string) $answer];
+	startGame($getGameData, GAME_TASK);
 }
 
-function play(): void
-{
-    run(fn() => getGameData(), GAME_TASK);
-}
