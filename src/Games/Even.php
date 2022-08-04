@@ -11,7 +11,7 @@ function isEven($int): bool
     return $int % 2 === 0;
 }
 
-function startEvenGame()
+function startEvenGame(): array
 {
     $getGameData = function () {
         $question = rand(1, 100);
