@@ -8,18 +8,15 @@ const GAME_TASKK = "Answer 'yes' if given number is prime. Otherwise answer 'no'
 
 function findPrime($number): bool
 {
-    if ($number <= 1 || $number % 2 === 0 || $number % 3 === 0) {
+    if ($number <= 1) {
                 return false;
-    } elseif ($number === 2 || $number === 3) {
-            return true;
-    } else {
-        for ($i = 5; $i < $number; $i++) {
-            if ($number % $i === 0) {
-                return false;
-            }
-        }
-                    return true;
     }
+    for ($i = 2; $i <= $number / 2; $i++) {
+        if ($number % $i === 0) {
+                return false;
+        }
+    }
+        return true;
 }
 function startPrimeGame()
 {
