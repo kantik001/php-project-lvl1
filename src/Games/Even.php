@@ -11,10 +11,10 @@ function isEven($int): bool
     return $int % 2 === 0;
 }
 
-function startEvenGame(): array
+function startEvenGame()
 {
-    $getGameData = function () {
-        $question = rand(1, 100);
+	$getGameData = function () {
+	$question = rand(1, 100);
         $answer = isEven($question) ? 'yes' : 'no';
         return [$question, $answer];
     };
