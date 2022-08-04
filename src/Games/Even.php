@@ -6,7 +6,7 @@ use function Brain\Games\Engine\runGame;
 
 const GAME_TASK = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-function isEven($int): bool
+function isEven(int $int): bool
 {
     return $int % 2 === 0;
 }

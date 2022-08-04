@@ -8,7 +8,7 @@ const GAME_QUE = "What number is missing in the progression?";
 
 const PROGRESSION = 10;
 
-function findProgression($firstNum, $step, $lengthProgr)
+function findProgression(int $firstNum, int $step, int $lengthProgr)
 {
         $result = [];
     for ($i = 0; $i < $lengthProgr; $i++) {
@@ -17,7 +17,7 @@ function findProgression($firstNum, $step, $lengthProgr)
         return $result;
 }
 
-function makeQuestion($member, $progression, $space = '..')
+function makeQuestion(int $member, int $progression, $space = '..')
 {
         $progression[$member] = $space;
         return $progression;
