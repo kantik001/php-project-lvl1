@@ -10,22 +10,21 @@ function startProgressionGame(): void
 {
     $getGameData = [];
     for ($i = 0; $i < 3; $i++) {
-	      $progression = [];
+          $progression = [];
               $firstNum = rand(0, 5);
-	      $step = rand(1, 5);
-	      $progressionLength = 10;
-	      for ($index = 0; $index < $progressionLength; $index++) {
-		      $progression[] = $firstNum + $step * $index;
-	      }
+          $step = rand(1, 5);
+          $progressionLength = 10;
+        for ($index = 0; $index < $progressionLength; $index++) {
+            $progression[] = $firstNum + $step * $index;
+        }
 
-	      $hiddenIndex = rand(0, $progressionLength - 1);
-	      $answer = $progression[$hiddenIndex];
-	      $progression[$hiddenIndex] = "..";
+          $hiddenIndex = rand(0, $progressionLength - 1);
+          $answer = $progression[$hiddenIndex];
+          $progression[$hiddenIndex] = "..";
 
-	      $question = implode(' ', $progression);
-	      $answer = (string) $answer;
-	      $getGameData[] = [$question, $answer];
-    
-    }         
+          $question = implode(' ', $progression);
+          $answer = (string) $answer;
+          $getGameData[] = [$question, $answer];
+    }
         runGame($getGameData, GAME_QUE);
 }
