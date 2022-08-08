@@ -17,22 +17,23 @@ function findProgression(int $firstNum, int $step, int $lengthProgr)
         return $result;
 }
 
-function makeQuestion(int $member, int $progression, $space = '..')
+function makeQuestion($member, $progression, $space = '..')
 {
         $progression[$member] = $space;
         return $progression;
 }
 
-function startProgressionGame()
+function startProgressionGame(): void
 {
-        $getGameData = function () {
-                $firstNum = rand(0, 5);
-                $step = rand(2, 5);
-                $member = rand(0, PROGRESSION - 1);
-                $progression = findProgression($firstNum, $step, PROGRESSION);
-                $answer = (string)$progression[$member];
-                $question = implode(' ', makeQuestion($member, $progression));
-                return [$question, $answer];
-        };
+    $getGameData = [];
+    for ($i = 0; $i < 3; $i++) {
+              $firstNum = rand(0, 5);
+              $step = rand(2, 5);
+              $member = rand(0, PROGRESSION - 1);
+              $progression = findProgression($firstNum, $step, PROGRESSION);
+              $answer = (string)$progression[$member];
+              $question = implode(' ', makeQuestion($member, $progression));
+              $getGameData[] = [$question, $answer];
+    };
         runGame($getGameData, GAME_QUE);
 }

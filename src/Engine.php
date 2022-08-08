@@ -7,7 +7,7 @@ use function cli\line;
 
 const ROUNDS_COUNT = 3;
 
-function runGame(callable $gameData, string $gameTask)
+function runGame(array $gameData, string $gameTask): void
 {
     line('Welcome to the Brain Games!');
     $playerName = prompt('May I have your name?');
@@ -15,7 +15,7 @@ function runGame(callable $gameData, string $gameTask)
     line($gameTask);
 
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
-        [$question, $answer] = $gameData();
+        [$question, $answer] = $gameData[$i];
         line("Question: $question");
         $playerAnswer = prompt('Your answer', '');
 

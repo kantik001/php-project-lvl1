@@ -20,10 +20,11 @@ function findPrime(int $number): bool
 }
 function startPrimeGame()
 {
-    $getGameData = function () {
+    $getGameData = [];
+    for ($i = 0; $i < 3; $i++) {
         $question = rand(1, 99);
         $answer = findPrime($question) ? 'yes' : 'no';
-        return [$question, $answer];
+        $getGameData[] = [$question, $answer];
     };
     runGame($getGameData, GAME_TASKK);
 }

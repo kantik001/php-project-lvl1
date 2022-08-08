@@ -11,12 +11,14 @@ function isEven(int $int): bool
     return $int % 2 === 0;
 }
 
-function startEvenGame()
+function startEvenGame(): void
 {
-    $getGameData = function () {
+    $getGameData = [];
+    $roundNum = 3;
+    for ($i = 1; $i <= $roundNum; $i++) {
         $question = rand(1, 100);
         $answer = isEven($question) ? 'yes' : 'no';
-        return [$question, $answer];
+        $getGameData[] = [$question, $answer];
     };
 
     runGame($getGameData, GAME_TASK);

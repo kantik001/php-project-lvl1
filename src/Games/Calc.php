@@ -6,8 +6,9 @@ use function Brain\Games\Engine\runGame;
 
 const GAME_TASK = 'What is the result of the expression?';
 const OPERATORS = ["+", "-", "*"];
+const NUM_ROUNDS = 3;
 
-function calculate(string $operator, int $num1, int $num2): string
+function calculate(string $operator, int $num1, int $num2): int
 {
     switch ($operator) {
         case "+":
@@ -19,15 +20,16 @@ function calculate(string $operator, int $num1, int $num2): string
     }
 }
 
-function startCalcGame()
+function startCalcGame(): void
 {
-    $getGameData = function () {
-        $num1 = rand(1, 100);
-        $num2 = rand(1, 100);
+    $getGameData = [];
+    for ($i = 1; $i <= NUM_ROUNDS; $i++) {
+        $num1 = rand(1, 10);
+        $num2 = rand(1, 10);
         $operator = OPERATORS[array_rand(OPERATORS, 1)];
         $question = "{$num1} {$operator} {$num2}";
-        $answer = calculate($operator, $num1, $num2);
-        return [$question, $answer];
+        $answer = (string) calculate($operator, $num1, $num2);
+        $getGameData[] = [$question, $answer];
     };
 
     runGame($getGameData, GAME_TASK);
