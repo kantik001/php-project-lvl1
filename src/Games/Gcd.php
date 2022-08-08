@@ -6,7 +6,7 @@ use function Brain\Games\Engine\runGame;
 
 const GAME_ASK = "Find the greatest common divisor of given numbers";
 
-function gcd(int $number1, int $number2): string
+function gcd(int $number1, int $number2)
 {
     $least = min($number1, $number2);
     for ($checkNumber = $least; $checkNumber > 1; $checkNumber--) {
