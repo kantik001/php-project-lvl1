@@ -8,7 +8,7 @@ const GAME_TASK = 'What is the result of the expression?';
 const OPERATORS = ["+", "-", "*"];
 const NUM_ROUNDS = 3;
 
-function calculate(string $operator, int $num1, int $num2): int
+function calculate(string $operator, int $num1, int $num2)
 {
     switch ($operator) {
         case "+":

@@ -17,7 +17,7 @@ function findProgression(int $firstNum, int $step, int $lengthProgr)
         return $result;
 }
 
-function makeQuestion($member, $progression, $space = '..')
+function makeQuestion(int $member, int $progression, string $space = '..')
 {
         $progression[$member] = $space;
         return $progression;
