@@ -48,28 +48,28 @@ BRAIN-EVEN
 
 $make brain-even
 
-<a href="https://asciinema.org/a/ZlKANn1OKpf9qs2qLD0z2l7FE" target="_blank"><img src="https://asciinema.org/a/ZlKANn1OKpf9qs2qLD0z2l7FE.svg" /></a>
+[![asciicast](https://asciinema.org/a/GoffvqgEMbj87HytBeFLoaLx4.svg)](https://asciinema.org/a/GoffvqgEMbj87HytBeFLoaLx4)
 
 BRAIN-CALC
 
 $make brain-calc
 
-[![asciicast](https://asciinema.org/a/QLnnGWXnOnkqBrxa9yW4YjoqU.svg)](https://asciinema.org/a/QLnnGWXnOnkqBrxa9yW4YjoqU)
+[![asciicast](https://asciinema.org/a/j7bc7STrK9kTwj3xmSMkWeb6C.svg)](https://asciinema.org/a/j7bc7STrK9kTwj3xmSMkWeb6C)
 
 BRAIN-GCD
 
 $make brain-gcd
 
-[![asciicast](https://asciinema.org/a/20BI8aPwH2sJJrrWT1QPJqXG1.svg)](https://asciinema.org/a/20BI8aPwH2sJJrrWT1QPJqXG1)
+[![asciicast](https://asciinema.org/a/N7KMVZKZbez8itmYZMX65u2U4.svg)](https://asciinema.org/a/N7KMVZKZbez8itmYZMX65u2U4)
 
 BRAIN_PROGRESSION
 
 $make brain-progression
 
-[![asciicast](https://asciinema.org/a/R0V4OTnCeStmsdEw5utKqEm8K.svg)](https://asciinema.org/a/R0V4OTnCeStmsdEw5utKqEm8K)
+[![asciicast](https://asciinema.org/a/tKlPqlbYOC3TV24HtZuUfhW4o.svg)](https://asciinema.org/a/tKlPqlbYOC3TV24HtZuUfhW4o)
 
 BRAIN-PRIME
 
 $make brain-prime
 
-<a href="https://asciinema.org/a/lQzfQqXUhp1zdFRihgtcCWOqZ" target="_blank"><img src="https://asciinema.org/a/lQzfQqXUhp1zdFRihgtcCWOqZ.svg" /></a>
+[![asciicast](https://asciinema.org/a/KbEwXVM6Mv2RsxLLxz5Cf0xCT.svg)](https://asciinema.org/a/KbEwXVM6Mv2RsxLLxz5Cf0xCT)
