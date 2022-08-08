@@ -8,7 +8,14 @@ const GAME_ASK = "Find the greatest common divisor of given numbers";
 
 function gcd(int $number1, int $number2): string
 {
-    return ($number1 % $number2) ? gcd($number2, $number1 % $number2) : $number2;
+    $least = min($number1, $number2);
+    for ($checkNumber = $least; $checkNumber > 1; $checkNumber--) {
+        if ($number1 % $checkNumber === 0 && $number2 % $checkNumber === 0) {
+                return (string) $checkNumber;
+        }
+    }
+
+        return 1;
 }
 
 function startGcdGame(): void
