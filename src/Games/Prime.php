@@ -1,11 +1,11 @@
 <?php
 
-namespace Brain\Games\Games\Prime;
+namespace Brain\Games\Prime;
 
-use function Brain\Games\Engine\runGame;
+use function Brain\Engine\runGame;
 
 const GAME_TASKK = "Answer 'yes' if given number is prime. Otherwise answer 'no'";
-
+use const Brain\Engine\ROUNDS_COUNT;
 function findPrime(int $number): bool
 {
     if ($number <= 1) {
@@ -20,11 +20,11 @@ function findPrime(int $number): bool
 }
 function startPrimeGame()
 {
-    $getGameData = [];
-    for ($i = 0; $i < 3; $i++) {
+    $gameData = [];
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $question = rand(1, 99);
         $answer = findPrime($question) ? 'yes' : 'no';
-        $getGameData[] = [$question, $answer];
+        $gameData[] = [$question, $answer];
     };
-    runGame($getGameData, GAME_TASKK);
+    runGame($gameData, GAME_TASKK);
 }

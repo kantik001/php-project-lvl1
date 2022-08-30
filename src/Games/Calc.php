@@ -1,8 +1,10 @@
 <?php
 
-namespace Brain\Games\Games\Calc;
+namespace Brain\Games\Calc;
 
-use function Brain\Games\Engine\runGame;
+use function Brain\Engine\runGame;
+
+use const Brain\Engine\ROUNDS_COUNT;
 
 const GAME_TASK = 'What is the result of the expression?';
 const OPERATORS = ["+", "-", "*"];
@@ -17,20 +19,22 @@ function calculate(string $operator, int $num1, int $num2)
             return $num1 - $num2;
         case "*":
             return $num1 * $num2;
+        default:
+            break;
     }
 }
 
 function startCalcGame(): void
 {
-    $getGameData = [];
-    for ($i = 1; $i <= NUM_ROUNDS; $i++) {
+    $gameData = [];
+    for ($i = 1; $i <= ROUNDS_COUNT; $i++) {
         $num1 = rand(1, 10);
         $num2 = rand(1, 10);
         $operator = OPERATORS[array_rand(OPERATORS, 1)];
         $question = "{$num1} {$operator} {$num2}";
         $answer = (string) calculate($operator, $num1, $num2);
-        $getGameData[] = [$question, $answer];
+        $gameData[] = [$question, $answer];
     };
 
-    runGame($getGameData, GAME_TASK);
+    runGame($gameData, GAME_TASK);
 }

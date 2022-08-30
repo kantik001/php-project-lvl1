@@ -1,11 +1,11 @@
 <?php
 
-namespace Brain\Games\Games\Even;
+namespace Brain\Games\Even;
 
-use function Brain\Games\Engine\runGame;
+use function Brain\Engine\runGame;
 
 const GAME_TASK = 'Answer "yes" if the number is even, otherwise answer "no".';
-
+use const Brain\Engine\ROUNDS_COUNT;
 function isEven(int $int): bool
 {
     return $int % 2 === 0;
@@ -13,13 +13,12 @@ function isEven(int $int): bool
 
 function startEvenGame(): void
 {
-    $getGameData = [];
-    $roundNum = 3;
-    for ($i = 1; $i <= $roundNum; $i++) {
+    $gameData = [];
+    for ($i = 1; $i <= ROUNDS_COUNT; $i++) {
         $question = rand(1, 100);
         $answer = isEven($question) ? 'yes' : 'no';
-        $getGameData[] = [$question, $answer];
+        $gameData[] = [$question, $answer];
     };
 
-    runGame($getGameData, GAME_TASK);
+    runGame($gameData, GAME_TASK);
 }

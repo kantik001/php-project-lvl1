@@ -1,10 +1,11 @@
 <?php
 
-namespace Brain\Games\Games\Gcd;
+namespace Brain\Games\Gcd;
 
-use function Brain\Games\Engine\runGame;
+use function Brain\Engine\runGame;
 
 const GAME_ASK = "Find the greatest common divisor of given numbers";
+use const Brain\Engine\ROUNDS_COUNT;
 
 function gcd(int $number1, int $number2)
 {
@@ -20,14 +21,14 @@ function gcd(int $number1, int $number2)
 
 function startGcdGame(): void
 {
-    $getGameData = [];
-    for ($i = 0; $i < 3; $i++) {
+    $gameData = [];
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $number1 = rand(1, 10);
         $number2 = rand(1, 10);
         $question = "{$number1} {$number2}";
         $answer = (string) gcd($number1, $number2);
-        $getGameData[] = [$question, $answer];
+        $gameData[] = [$question, $answer];
     };
 
-    runGame($getGameData, GAME_ASK);
+    runGame($gameData, GAME_ASK);
 }

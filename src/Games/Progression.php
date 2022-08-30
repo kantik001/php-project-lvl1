@@ -1,14 +1,16 @@
 <?php
 
-namespace Brain\Games\Games\Progression;
+namespace Brain\Games\Progression;
 
-use function Brain\Games\Engine\runGame;
+use function Brain\Engine\runGame;
+
+use const Brain\Engine\ROUNDS_COUNT;
 
 const GAME_QUE = "What number is missing in the progression?";
 
 function startProgressionGame(): void
 {
-    $getGameData = [];
+    $gameData = [];
     for ($i = 0; $i < 3; $i++) {
           $progression = [];
               $firstNum = rand(0, 5);
@@ -24,7 +26,7 @@ function startProgressionGame(): void
 
           $question = implode(' ', $progression);
           $answer = (string) $answer;
-          $getGameData[] = [$question, $answer];
+          $gameData[] = [$question, $answer];
     }
-        runGame($getGameData, GAME_QUE);
+        runGame($gameData, GAME_QUE);
 }
