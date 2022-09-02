@@ -16,9 +16,9 @@ function startProgressionGame(): void
         $firstNum = rand(0, 5);
         $step = rand(1, 5);
         $progressionLength = 10;
-            for ($index = 0; $index < $progressionLength; $index++) {
-                $progression[] = $firstNum + $step * $index;
-            }
+        for ($index = 0; $index < $progressionLength; $index++) {
+            $progression[] = $firstNum + $step * $index;
+        }
 
         $hiddenIndex = rand(0, $progressionLength - 1);
         $answer = $progression[$hiddenIndex];
