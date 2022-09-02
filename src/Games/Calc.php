@@ -4,6 +4,8 @@ namespace Brain\Games\Calc;
 
 use function Brain\Engine\runGame;
 
+use Exception;
+
 use const Brain\Engine\ROUNDS_COUNT;
 
 const GAME_ASK = 'What is the result of the expression?';
@@ -20,7 +22,7 @@ function calculate(string $operator, int $num1, int $num2)
         case "*":
             return $num1 * $num2;
         default:
-            throw new Error(`Unknown order state: '${order.state}'!`);
+            throw new Exception('Error');
     }
 }
 
