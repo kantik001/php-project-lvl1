@@ -4,19 +4,21 @@ namespace Brain\Games\Prime;
 
 use function Brain\Engine\runGame;
 
-const GAME_TASKK = "Answer 'yes' if given number is prime. Otherwise answer 'no'";
+const GAME_ASK = "Answer 'yes' if given number is prime. Otherwise answer 'no'";
+
 use const Brain\Engine\ROUNDS_COUNT;
+
 function findPrime(int $number): bool
 {
     if ($number <= 1) {
-                return false;
+        return false;
     }
     for ($i = 2; $i <= $number / 2; $i++) {
         if ($number % $i === 0) {
-                return false;
+            return false;
         }
     }
-        return true;
+    return true;
 }
 function startPrimeGame()
 {
@@ -26,5 +28,5 @@ function startPrimeGame()
         $answer = findPrime($question) ? 'yes' : 'no';
         $gameData[] = [$question, $answer];
     };
-    runGame($gameData, GAME_TASKK);
+    runGame($gameData, GAME_ASK);
 }

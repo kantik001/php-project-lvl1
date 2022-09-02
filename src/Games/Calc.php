@@ -6,9 +6,9 @@ use function Brain\Engine\runGame;
 
 use const Brain\Engine\ROUNDS_COUNT;
 
-const GAME_TASK = 'What is the result of the expression?';
+const GAME_ASK = 'What is the result of the expression?';
+
 const OPERATORS = ["+", "-", "*"];
-const NUM_ROUNDS = 3;
 
 function calculate(string $operator, int $num1, int $num2)
 {
@@ -20,7 +20,7 @@ function calculate(string $operator, int $num1, int $num2)
         case "*":
             return $num1 * $num2;
         default:
-            break;
+            throw new Error(`Unknown order state: '${order.state}'!`);
     }
 }
 
@@ -36,5 +36,5 @@ function startCalcGame(): void
         $gameData[] = [$question, $answer];
     };
 
-    runGame($gameData, GAME_TASK);
+    runGame($gameData, GAME_ASK);
 }

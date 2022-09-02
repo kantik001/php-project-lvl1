@@ -4,8 +4,10 @@ namespace Brain\Games\Even;
 
 use function Brain\Engine\runGame;
 
-const GAME_TASK = 'Answer "yes" if the number is even, otherwise answer "no".';
+const GAME_ASK = 'Answer "yes" if the number is even, otherwise answer "no".';
+
 use const Brain\Engine\ROUNDS_COUNT;
+
 function isEven(int $int): bool
 {
     return $int % 2 === 0;
@@ -20,5 +22,5 @@ function startEvenGame(): void
         $gameData[] = [$question, $answer];
     };
 
-    runGame($gameData, GAME_TASK);
+    runGame($gameData, GAME_ASK);
 }
