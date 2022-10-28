@@ -2,9 +2,9 @@
 
 namespace Brain\Games\Calc;
 
-use function Brain\Engine\runGame;
-
 use Exception;
+
+use function Brain\Engine\runGame;
 
 use const Brain\Engine\ROUNDS_COUNT;
 
